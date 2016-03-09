@@ -34,14 +34,21 @@ function validateName(name) {
 
 
 
-/*
- * Randomly generates and returns a name for a computer player.
+
+/* Randomly generates and returns a name for a computer player.
  */
 function generateComputerName() {
- 	var computerPlayer = 
 
- 	return computerPlayer; 
+    var computerPlayer = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+    for( var i=0; i < 5; i++ )
+        computerPlayer += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return computerPlayer;
 }
+
+
 
 /*
  * Validate a yes/no answer. If the yesNoString is 'y' or 'yes' then the
