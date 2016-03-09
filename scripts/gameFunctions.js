@@ -11,8 +11,13 @@
  * result in true.
  */
 function validateGameType(gameTypeString) {
-
-}
+	if ((gameTypeString === 1) || ('one' === gameTypeString.toLowerCase())) {
+		return 1;
+	} else if ((gameTypeString === 2) || ('two' === gameTypeString.toLowerCase())) {
+			return 2;
+		}
+		else return false;
+	}
 
 /*
  * Returns the players name if it is a valid name. Valid names must only contain
@@ -20,6 +25,7 @@ function validateGameType(gameTypeString) {
  * false if the name is not valid.
  */
 function validateName(name) {
+	
 
 }
 
