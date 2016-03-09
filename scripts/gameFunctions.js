@@ -72,6 +72,9 @@ function validateYesNo(yesNoString) {
  * 'O' and vice versa.
  */
 function getNextPlayer(currentPlayer) {
+	if (currentPlayer === 'X') {
+		return 'O';
+	} else return 'X';
 
 }
 
