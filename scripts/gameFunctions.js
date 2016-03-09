@@ -24,16 +24,23 @@ function validateGameType(gameTypeString) {
  * letters, hyphens or spaces and must contain at least one letter. Returns
  * false if the name is not valid.
  */
-function validateName(name) {
+function validateName(name) { 
+	if ((name.length() >= 1) && (typeof(name) === "string")) {
+		return name;	
+		}
+		else return false;  
+	}
 	
 
-}
+
 
 /*
  * Randomly generates and returns a name for a computer player.
  */
 function generateComputerName() {
+ 	var computerPlayer = 
 
+ 	return computerPlayer; 
 }
 
 /*
@@ -44,7 +51,12 @@ function generateComputerName() {
  * insensitive, so it should accept both 'Y' and 'y' for example.
  */
 function validateYesNo(yesNoString) {
-
+	if ((yesNoString.toLowerCase() === 'y') || (yesNoString.toLowerCase() === 'yes')) {
+		return true;
+	} else if ((yesNoString.toLowerCase() === 'n') || (yesNoString.toLowerCase() === 'no')) {
+		return false;
+		} 
+		return null;  
 }
 
 /*
