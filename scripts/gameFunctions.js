@@ -98,7 +98,23 @@ function getNextPlayer(currentPlayer) {
  */
 function getGameBoardString(gameBoard) {
 
+	for (i = 0; i < 3; i++)
+		for (j = 0; j < 3; j++)
+
+	gameBoard
+
+
+
 }
+
+
+
+
+
+
+
+
+
 
 /*
  * Return the number of empty spaces that currently exist within the gameBoard
@@ -106,6 +122,15 @@ function getGameBoardString(gameBoard) {
  * For example, the game board might be 3x3, 4x4, or 5x7.
  */
 function getEmptySpaceCount(gameBoard) {
+	var numEmptySpaces;
+	x = 
+	y = 
+	for (i = 0; i < x ; i++)
+		for (j = 0; j < y ; j++) {
+			if ([i][j] === ' ')
+				numEmptySpaces++;
+		}
+
 
 }
 
