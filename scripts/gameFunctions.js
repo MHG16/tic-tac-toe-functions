@@ -25,7 +25,7 @@ function validateGameType(gameTypeString) {
  * false if the name is not valid.
  */
 function validateName(name) { 
-	if ((name.length() >= 1) && (typeof(name) === "string")) {
+	if ((name.length >= 1) && (typeof(name) === "string")) {
 		return name;	
 		}
 		else return false;  
@@ -42,8 +42,9 @@ function generateComputerName() {
     var computerPlayer = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
-    for( var i=0; i < 5; i++ )
+    for( var i=0; i < 5; i++ ) {
         computerPlayer += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
 
     return computerPlayer;
 }
@@ -74,8 +75,10 @@ function validateYesNo(yesNoString) {
 function getNextPlayer(currentPlayer) {
 	if (currentPlayer === 'X') {
 		return 'O';
-	} else return 'X';
+	} else {
 
+		return 'X';
+	}
 }
 
 /*
@@ -96,25 +99,35 @@ function getNextPlayer(currentPlayer) {
  * 3 |   |   |   |
  *   ~~~~~~~~~~~~~
  */
-function getGameBoardString(gameBoard) {
 
-	for (i = 0; i < 3; i++)
-		for (j = 0; j < 3; j++)
+function  getGameBoardString(gameBoard) {
+	// create a string to remember what my board looks like currently
+	// set that string to the first two rows
+		var gs = '\n\
+     1   2   3\n\
+  ~~~~~~~~~~~~~';
+	// iterate over each row from 0 to length of array.  
+	// i is the row, x is the cell in that row.
+	for(var i=0; i<gameBoard.length; i++) {
+		// add that row to the string
+		gs = gs + '\n';
+		// add the row number to the string, add | to the string
+		gs = gs + (i+1) + ' |';
+		// iterate over the row
+		for(var x=0; x<gameBoard[i].length; x++) {
+			// add the cell to the string
+			gs = gs + ' ' + gameBoard[i][x] + ' |';
 
-	gameBoard
-
-
+		}
+				
+				
+		// add the ~~~~ to the string
+		gs = gs + '\n  ~~~~~~~~~~~~~';
+		// return the string
+	}
+	return gs;
 
 }
-
-
-
-
-
-
-
-
-
 
 /*
  * Return the number of empty spaces that currently exist within the gameBoard
@@ -122,16 +135,19 @@ function getGameBoardString(gameBoard) {
  * For example, the game board might be 3x3, 4x4, or 5x7.
  */
 function getEmptySpaceCount(gameBoard) {
-	var numEmptySpaces;
-	x = 
-	y = 
-	for (i = 0; i < x ; i++)
-		for (j = 0; j < y ; j++) {
-			if ([i][j] === ' ')
-				numEmptySpaces++;
+	var countEmptySpaces = 0;
+
+	//iterate over each row
+	for(var i = 0; i < gameBoard.length; i++) {
+		//iterate over each cell in that row   
+		for (var x = 0; x < gameBoard[i].length; x++) {
+			if (gameBoard[i][x] === ' ') {
+				countEmptySpaces++; 
+			}
 		}
 
-
+	} 
+	return countEmptySpaces;
 }
 
 
