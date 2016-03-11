@@ -142,11 +142,12 @@ function getEmptySpaceCount(gameBoard) {
 		//iterate over each cell in that row   
 		for (var x = 0; x < gameBoard[i].length; x++) {
 			if (gameBoard[i][x] === ' ') {
-				countEmptySpaces++; 
+				countEmptySpaces++; //add one to the empty space count if ' ' is found in that cell.
 			}
 		}
 
 	} 
+	//returns the total number of empty spaces
 	return countEmptySpaces;
 }
 
